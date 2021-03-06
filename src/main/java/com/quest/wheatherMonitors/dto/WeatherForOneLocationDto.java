@@ -4,16 +4,17 @@ package com.quest.wheatherMonitors.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@Getter
+import java.util.List;
+
+
 @Setter
-@ToString
+@Getter
 @AllArgsConstructor
 public class WeatherForOneLocationDto {
 
     private Coord coord;
-    private Weather weather;
+    private List<Weather> weather;
     private String base;
     private Main main;
     private int visibility;
