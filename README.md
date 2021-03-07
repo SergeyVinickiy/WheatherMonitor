@@ -1,4 +1,4 @@
-# WeatherMonitor :umbrella:
+# Weather Monitor :umbrella:
 
 **To run the project execute following command:**
 * Go to project path in terminal (folder with pom file)
