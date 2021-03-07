@@ -1,4 +1,4 @@
-package com.quest.wheatherMonitors.service;
+package com.quest.weatherMonitors.service;
 
 
 import java.util.Hashtable;

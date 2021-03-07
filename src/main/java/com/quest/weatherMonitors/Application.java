@@ -1,11 +1,11 @@
-package com.quest.wheatherMonitors;
+package com.quest.weatherMonitors;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
-import com.quest.wheatherMonitors.entity.City;
-import com.quest.wheatherMonitors.helpers.RequestExecutorHelper;
-import com.quest.wheatherMonitors.service.WeatherByCityName;
+import com.quest.weatherMonitors.entity.City;
+import com.quest.weatherMonitors.helpers.RequestExecutorHelper;
+import com.quest.weatherMonitors.service.WeatherByCityName;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -20,12 +20,11 @@ public class Application {
 
     public static void main(String[] args) {
         cities = getCitiesList();
-        WeatherByCityName[] threads = new WeatherByCityName[cities.size()];
+        WeatherByCityName[] cityWeatherThreads = new WeatherByCityName[cities.size()];
+        for (int i = 0; i < cityWeatherThreads.length; i++) {
 
-        for (int i = 0; i < threads.length; i++) {
-
-            threads[i] = new WeatherByCityName(requestExecutorHelper, cities.get(i));
-            Thread thread = new Thread(threads[i]);
+            cityWeatherThreads[i] = new WeatherByCityName(requestExecutorHelper, cities.get(i));
+            Thread thread = new Thread(cityWeatherThreads[i]);
             thread.start();
         }
 
@@ -35,7 +34,7 @@ public class Application {
         Gson jsonParser = new Gson();
         List<City> cities = null;
         try {
-            JsonReader reader = new JsonReader(new FileReader("C:\\Users\\sergeyv1\\OneDrive - Verifone\\Desktop\\weatherMonitors\\src\\main\\resources\\configuration.json"));
+            JsonReader reader = new JsonReader(new FileReader("src\\main\\resources\\configuration.json"));
             cities = jsonParser.fromJson(reader, new TypeToken<List<City>>(){}.getType());
 
         } catch (FileNotFoundException e) {

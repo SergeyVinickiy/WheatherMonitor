@@ -1,4 +1,4 @@
-package com.quest.wheatherMonitors.dto;
+package com.quest.weatherMonitors.dto;
 
 import lombok.Getter;
 import lombok.Setter;

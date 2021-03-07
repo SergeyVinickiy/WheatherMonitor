@@ -1,4 +1,4 @@
-package com.quest.wheatherMonitors.dto;
+package com.quest.weatherMonitors.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -26,6 +26,7 @@ public class WeatherForOneLocationDto {
     private int id;
     private String name;
     private int cod;
+    private String message;
 
 
 }

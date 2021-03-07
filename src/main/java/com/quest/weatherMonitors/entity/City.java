@@ -1,4 +1,4 @@
-package com.quest.wheatherMonitors.entity;
+package com.quest.weatherMonitors.entity;
 
 
 import lombok.AllArgsConstructor;

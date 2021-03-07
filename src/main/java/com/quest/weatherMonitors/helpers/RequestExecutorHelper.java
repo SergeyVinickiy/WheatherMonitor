@@ -1,12 +1,12 @@
-package com.quest.wheatherMonitors.helpers;
+package com.quest.weatherMonitors.helpers;
 
 
-import com.quest.wheatherMonitors.dto.ApiResponse;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import com.quest.weatherMonitors.dto.ApiResponse;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -26,7 +26,7 @@ public class RequestExecutorHelper {
     public ApiResponse getGetResponseData(String url) throws Exception {
 
         GetMethod get = new GetMethod(url);
-        System.out.println("Client about to send request to " + get.getURI());
+        System.out.println("\nClient about to send request to " + get.getURI() + "\n");
 
         String responseBody = null;
         try {
